@@ -24,3 +24,5 @@ printDiamond(1);
 printDiamond(2);
 printDiamond(3);
 printDiamond(4);
+printDiamond(5);
+printDiamond(6);
