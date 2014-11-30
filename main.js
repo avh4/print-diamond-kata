@@ -1,19 +1,23 @@
 
+function spaces(n) {
+  return new Array(n+1).join(" ");
+}
+
 function printDiamond(n) {
   if (n == 1) {
-    console.log(new Array(n).join(" ") + "A");
+    console.log(spaces(n-1) + "A");
   }
   if (n == 2) {
-    console.log(new Array(n).join(" ") + "A");
+    console.log(spaces(n-1) + "A");
     console.log("B B");
-    console.log(new Array(n).join(" ") + "A");
+    console.log(spaces(n-1) + "A");
   }
   if (n == 3) {
-    console.log(new Array(n).join(" ") + "A");
-    console.log(new Array(n-1).join(" ") + "B B");
+    console.log(spaces(n-1) + "A");
+    console.log(spaces(n-2) + "B B");
     console.log("C   C");
-    console.log(new Array(n-1).join(" ") + "B B");
-    console.log(new Array(n).join(" ") + "A");
+    console.log(spaces(n-2) + "B B");
+    console.log(spaces(n-1) + "A");
   }
 }
 
