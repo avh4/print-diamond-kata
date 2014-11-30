@@ -5,11 +5,15 @@ function spaces(n) {
 
 function printDiamond(n) {
   lines = [];
-  console.log(spaces(n-1) + "A");
-  for (i=n-2, c=1; i >= 0; i--, c++) {
+  var letter, left, right;
+  for (i=n-1, c=0; i >= 0; i--, c++) {
     letter = String.fromCharCode(65 + c)
-    var left = spaces(i) + letter + spaces(c);
-    var right = spaces(c-1) + letter;
+    left = spaces(i) + letter + spaces(c);
+    if (c == 0) {
+      right = "";
+    } else {
+      right = spaces(c-1) + letter;
+    }
     lines.push(line = left + right);
     console.log(line);
   }
@@ -17,9 +21,6 @@ function printDiamond(n) {
   lines.pop();
   while(line = lines.pop()) {
     console.log(line);
-  }
-  if (n > 1) {
-    console.log(spaces(n-1) + "A");
   }
 }
 
