@@ -29,9 +29,10 @@ function row(rowIndex, indentation) {
 
 function printDiamond(n) {
   lines = [];
-  var letter, left, right;
-  for (i=n-1, c=0; i >= 0; i--, c++) {
-    lines.push(row(c, i));
+  for (indentation=n-1, rowIndex=0;
+       indentation >= 0;
+       indentation--, rowIndex++) {
+    lines.push(row(rowIndex, indentation));
   }
   printArray(lines);
   printReflection(lines);
