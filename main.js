@@ -4,16 +4,17 @@ function spaces(n) {
 }
 
 function printDiamond(n) {
+  lines = [];
   console.log(spaces(n-1) + "A");
-  j = 1;
-  for (i=n-2, c=1; i >= 0; i--, j+=2, c++) {
+  for (i=n-2, j=1, c=1; i >= 0; i--, j+=2, c++) {
     letter = String.fromCharCode(65 + c)
-    console.log(spaces(i) + letter + spaces(j) + letter);
+    lines.push(line = spaces(i) + letter + spaces(j) + letter);
+    console.log(line);
   }
-  j -= 4;
-  for (i=1, c=n-2; i <= n-2; i++, j-=2, c--) {
-    letter = String.fromCharCode(65 + c)
-    console.log(spaces(i) + letter + spaces(j) + letter);   
+  var line;
+  lines.pop();
+  while(line = lines.pop()) {
+    console.log(line);
   }
   if (n > 1) {
     console.log(spaces(n-1) + "A");
