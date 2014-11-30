@@ -12,20 +12,15 @@ function printDiamond(n) {
     console.log("B" + spaces(1) + "B");
     console.log(spaces(n-1) + "A");
   }
-  if (n == 3) {
+  if (n == 3 || n == 4) {
     console.log(spaces(n-1) + "A");
-    console.log(spaces(n-2) + "B" + spaces(1) + "B");
-    console.log("C" + spaces(3) + "C");
-    console.log(spaces(n-2) + "B" + spaces(1) + "B");
-    console.log(spaces(n-1) + "A");
-  }
-  if (n == 4) {
-    console.log(spaces(n-1) + "A");
-    for (i=n-2, j=1, c=1; i >= n-4; i--, j+=2, c++) {
+    j = 1;
+    for (i=n-2, c=1; i >= 0; i--, j+=2, c++) {
       letter = String.fromCharCode(65 + c)
       console.log(spaces(i) + letter + spaces(j) + letter);
     }
-    for (i=n-3, j=n-1, c=n-2; i <= n-2; i++, j-=2, c--) {
+    j -= 4;
+    for (i=1, c=n-2; i <= n-2; i++, j-=2, c--) {
       letter = String.fromCharCode(65 + c)
       console.log(spaces(i) + letter + spaces(j) + letter);   
     }
