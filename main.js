@@ -9,23 +9,23 @@ function printDiamond(n) {
   }
   if (n == 2) {
     console.log(spaces(n-1) + "A");
-    console.log("B B");
+    console.log("B" + spaces(1) + "B");
     console.log(spaces(n-1) + "A");
   }
   if (n == 3) {
     console.log(spaces(n-1) + "A");
-    console.log(spaces(n-2) + "B B");
-    console.log("C   C");
-    console.log(spaces(n-2) + "B B");
+    console.log(spaces(n-2) + "B" + spaces(1) + "B");
+    console.log("C" + spaces(3) + "C");
+    console.log(spaces(n-2) + "B" + spaces(1) + "B");
     console.log(spaces(n-1) + "A");
   }
   if (n == 4) {
     console.log(spaces(n-1) + "A");
-    console.log(spaces(n-2) + "B B");
-    console.log(spaces(n-3) + "C   C");
-    console.log("D     D");
-    console.log(spaces(n-3) + "C   C");
-    console.log(spaces(n-2) + "B B");
+    console.log(spaces(n-2) + "B" + spaces(1) + "B");
+    console.log(spaces(n-3) + "C" + spaces(3) + "C");
+    console.log("D" + spaces(5) + "D");
+    console.log(spaces(n-3) + "C" + spaces(3) + "C");
+    console.log(spaces(n-2) + "B" + spaces(1) + "B");
     console.log(spaces(n-1) + "A");
   }
 }
