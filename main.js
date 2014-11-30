@@ -19,8 +19,18 @@ function printDiamond(n) {
     console.log(spaces(n-2) + "B B");
     console.log(spaces(n-1) + "A");
   }
+  if (n == 4) {
+    console.log(spaces(n-1) + "A");
+    console.log(spaces(n-2) + "B B");
+    console.log(spaces(n-3) + "C   C");
+    console.log("D     D");
+    console.log(spaces(n-3) + "C   C");
+    console.log(spaces(n-2) + "B B");
+    console.log(spaces(n-1) + "A");
+  }
 }
 
 printDiamond(1);
 printDiamond(2);
 printDiamond(3);
+printDiamond(4);
