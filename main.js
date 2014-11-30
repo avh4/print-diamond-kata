@@ -1,1 +1,6 @@
-console.log("A");
+
+function printDiamond(n) {
+  console.log("A");
+}
+
+printDiamond(1);
