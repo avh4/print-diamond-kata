@@ -6,9 +6,11 @@ function spaces(n) {
 function printDiamond(n) {
   lines = [];
   console.log(spaces(n-1) + "A");
-  for (i=n-2, j=1, c=1; i >= 0; i--, j+=2, c++) {
+  for (i=n-2, c=1; i >= 0; i--, c++) {
     letter = String.fromCharCode(65 + c)
-    lines.push(line = spaces(i) + letter + spaces(j) + letter);
+    var left = spaces(i) + letter + spaces(c);
+    var right = spaces(c-1) + letter;
+    lines.push(line = left + right);
     console.log(line);
   }
   var line;
