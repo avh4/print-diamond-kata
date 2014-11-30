@@ -3,7 +3,8 @@ function spaces(n) {
   return new Array(n+1).join(" ");
 }
 
-function row(rowIndex, indentation) {
+function row(rowIndex, totalRows) {
+  indentation = totalRows - rowIndex - 1;
   letter = String.fromCharCode(65 + rowIndex);
   left = spaces(indentation) + letter + spaces(rowIndex);
   if (rowIndex == 0) {
@@ -14,15 +15,15 @@ function row(rowIndex, indentation) {
 }
 
 function printDiamond(n) {
-  for (indentation=n-1, rowIndex=0;
-       indentation >= 0;
-       indentation--, rowIndex++) {
-    console.log(row(rowIndex, indentation));
+  for (rowIndex=0;
+       rowIndex < n;
+       rowIndex++) {
+    console.log(row(rowIndex, n));
   }
-  for (indentation=1, rowIndex=n-2;
+  for (rowIndex=n-2;
        rowIndex >= 0;
-       indentation++, rowIndex--) {
-    console.log(row(rowIndex, indentation));
+       rowIndex--) {
+    console.log(row(rowIndex, n));
   }
 }
 
