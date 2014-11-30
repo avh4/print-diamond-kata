@@ -15,14 +15,10 @@ function row(rowIndex, totalRows) {
 }
 
 function printDiamond(n) {
-  for (rowIndex=0;
-       rowIndex < n;
-       rowIndex++) {
+  for (rowIndex=0; rowIndex < n; rowIndex++) {
     console.log(row(rowIndex, n));
   }
-  for (rowIndex=n-2;
-       rowIndex >= 0;
-       rowIndex--) {
+  for (rowIndex=n-2; rowIndex >= 0; rowIndex--) {
     console.log(row(rowIndex, n));
   }
 }
