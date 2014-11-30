@@ -3,20 +3,6 @@ function spaces(n) {
   return new Array(n+1).join(" ");
 }
 
-function printArray(lines) {
-  lines.forEach(function(line) {
-    console.log(line);
-  });
-}
-
-function printReflection(lines) {
-  var line;
-  lines.pop();
-  while(line = lines.pop()) {
-    console.log(line);
-  }
-}
-
 function row(rowIndex, indentation) {
   letter = String.fromCharCode(65 + rowIndex);
   left = spaces(indentation) + letter + spaces(rowIndex);
@@ -28,14 +14,16 @@ function row(rowIndex, indentation) {
 }
 
 function printDiamond(n) {
-  lines = [];
   for (indentation=n-1, rowIndex=0;
        indentation >= 0;
        indentation--, rowIndex++) {
-    lines.push(row(rowIndex, indentation));
+    console.log(row(rowIndex, indentation));
   }
-  printArray(lines);
-  printReflection(lines);
+  for (indentation=1, rowIndex=n-2;
+       rowIndex >= 0;
+       indentation++, rowIndex--) {
+    console.log(row(rowIndex, indentation));
+  }
 }
 
 printDiamond(1);
@@ -44,3 +32,4 @@ printDiamond(3);
 printDiamond(4);
 printDiamond(5);
 printDiamond(6);
+printDiamond(200);
