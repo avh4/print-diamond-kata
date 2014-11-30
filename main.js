@@ -17,18 +17,21 @@ function printReflection(lines) {
   }
 }
 
+function row(rowIndex, indentation) {
+  letter = String.fromCharCode(65 + rowIndex);
+  left = spaces(indentation) + letter + spaces(rowIndex);
+  if (rowIndex == 0) {
+    return left;
+  } else {
+    return left + spaces(rowIndex-1) + letter;
+  }
+}
+
 function printDiamond(n) {
   lines = [];
   var letter, left, right;
   for (i=n-1, c=0; i >= 0; i--, c++) {
-    letter = String.fromCharCode(65 + c)
-    left = spaces(i) + letter + spaces(c);
-    if (c == 0) {
-      right = "";
-    } else {
-      right = spaces(c-1) + letter;
-    }
-    lines.push(left + right);
+    lines.push(row(c, i));
   }
   printArray(lines);
   printReflection(lines);
