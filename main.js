@@ -3,6 +3,20 @@ function spaces(n) {
   return new Array(n+1).join(" ");
 }
 
+function printArray(lines) {
+  lines.forEach(function(line) {
+    console.log(line);
+  });
+}
+
+function printReflection(lines) {
+  var line;
+  lines.pop();
+  while(line = lines.pop()) {
+    console.log(line);
+  }
+}
+
 function printDiamond(n) {
   lines = [];
   var letter, left, right;
@@ -14,14 +28,10 @@ function printDiamond(n) {
     } else {
       right = spaces(c-1) + letter;
     }
-    lines.push(line = left + right);
-    console.log(line);
+    lines.push(left + right);
   }
-  var line;
-  lines.pop();
-  while(line = lines.pop()) {
-    console.log(line);
-  }
+  printArray(lines);
+  printReflection(lines);
 }
 
 printDiamond(1);
