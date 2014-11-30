@@ -1,19 +1,19 @@
 
 function printDiamond(n) {
   if (n == 1) {
-    console.log("A");
+    console.log(new Array(n).join(" ") + "A");
   }
   if (n == 2) {
-    console.log(" A");
+    console.log(new Array(n).join(" ") + "A");
     console.log("B B");
-    console.log(" A");
+    console.log(new Array(n).join(" ") + "A");
   }
   if (n == 3) {
-    console.log("  A");
-    console.log(" B B");
+    console.log(new Array(n).join(" ") + "A");
+    console.log(new Array(n-1).join(" ") + "B B");
     console.log("C   C");
-    console.log(" B B");
-    console.log("  A");
+    console.log(new Array(n-1).join(" ") + "B B");
+    console.log(new Array(n).join(" ") + "A");
   }
 }
 
