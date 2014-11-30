@@ -25,8 +25,10 @@ function printDiamond(n) {
       letter = String.fromCharCode(65 + c)
       console.log(spaces(i) + letter + spaces(j) + letter);
     }
-    console.log(spaces(n-3) + "C" + spaces(3) + "C");
-    console.log(spaces(n-2) + "B" + spaces(1) + "B");
+    for (i=n-3, j=n-1, c=n-2; i <= n-2; i++, j-=2, c--) {
+      letter = String.fromCharCode(65 + c)
+      console.log(spaces(i) + letter + spaces(j) + letter);   
+    }
     console.log(spaces(n-1) + "A");
   }
 }
